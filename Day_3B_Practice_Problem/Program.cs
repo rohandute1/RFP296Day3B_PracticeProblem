@@ -16,7 +16,7 @@ namespace Day_3B_Practice_Problem
             while (continueExecution)
             {
                 Console.WriteLine("Please choose any one of the following program:");
-                Console.WriteLine("1.Types of Constructor\n2.Interface Concept");
+                Console.WriteLine("1.Types of Constructor\n2.Interface Concept\n3.Access Modifier Demonstration");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -43,6 +43,24 @@ namespace Day_3B_Practice_Problem
 
                         Console.WriteLine($"Circle - Area: {circle.CalculateArea()}, Perimeter: {circle.CalculatePerimeter()}");
                         Console.WriteLine($"Rectangle - Area: {rectangle.CalculateArea()}, Perimeter: {rectangle.CalculatePerimeter()}");
+                        break;
+
+                    case 3:
+                        MyBaseClass baseObj = new MyBaseClass();
+                        Console.WriteLine($"PublicField from Main: {baseObj.PublicField}");
+                        // PrivateField is not accessible from Main
+                        // ProtectedField is not accessible from Main
+                        Console.WriteLine($"InternalField from Main: {baseObj.InternalField}");
+
+                        // PublicMethod is accessible from Main
+                        baseObj.PublicMethod();
+                        // PrivateMethod is not accessible from Main
+                        // ProtectedMethod is not accessible from Main
+                        baseObj.InternalMethod();
+
+                        Console.WriteLine("\nDerived class:");
+                        MyDerivedClass derivedObj = new MyDerivedClass();
+                        derivedObj.AccessBaseClassMembers();
                         break;
 
                     default:
