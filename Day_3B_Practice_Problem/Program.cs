@@ -16,7 +16,7 @@ namespace Day_3B_Practice_Problem
             while (continueExecution)
             {
                 Console.WriteLine("Please choose any one of the following program:");
-                Console.WriteLine("1.Types of Constructor\n");
+                Console.WriteLine("1.Types of Constructor\n2.Interface Concept");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -37,7 +37,13 @@ namespace Day_3B_Practice_Problem
                         person3.Display();
                         break;
 
-                    
+                    case 2:
+                        Circle circle = new Circle(5);
+                        Rectangle rectangle = new Rectangle(4, 6);
+
+                        Console.WriteLine($"Circle - Area: {circle.CalculateArea()}, Perimeter: {circle.CalculatePerimeter()}");
+                        Console.WriteLine($"Rectangle - Area: {rectangle.CalculateArea()}, Perimeter: {rectangle.CalculatePerimeter()}");
+                        break;
 
                     default:
                         Console.WriteLine("Invalid option, Please select a valid program.");
